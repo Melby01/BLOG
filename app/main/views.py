@@ -3,7 +3,6 @@ from . import main
 from .forms import *
 from .. import db,photos
 from flask_login import login_required,current_user
-import markdown2 
 from ..request import get_quote
 from ..models import *
 

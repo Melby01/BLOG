@@ -122,7 +122,7 @@ class Idea(db.Model):
 
     @classmethod
     def get_idea(cls,cate):
-        idea = idea.query.filter_by(category=cate).all()
+        idea = Idea.query.filter_by(category=cate).all()
         return idea
     
     @classmethod
