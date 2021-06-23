@@ -19,15 +19,7 @@
                     </li>
               </ul> 
             
-          
-            <ul class="nav navbar-nav navbar-right">
-              {% if current_user.is_authenticated %}
-              <li style="color:white;padding:15px;">{{current_user.username}}</li>
-              <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-              {% else %}
-              <li><a href="{{url_for('auth.login')}}">Sign out</a></li>
-              {%endif%}
-            </ul>
+        
           
             <ul class="nav navbar-nav navbar-right" styles="color : blue">
               {% if current_user.is_authenticated %}
@@ -37,18 +29,6 @@
               <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
               {%endif%}
             </ul>
-
-
-            <ul class="nav navbar-nav navbar-right">
-                {% if current_user.is_authenticated %}
-                <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-                <li><a href="{{url_for('auth.writer_login')}}">Writer Sign in</a></li>
-                <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-                {% else %}
-                <li><a href="{{url_for('auth.login')}}">User Sign in</a></li>
-                {%endif%}
-            </ul>
-
         </div>
 
     </div>

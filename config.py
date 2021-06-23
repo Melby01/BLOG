@@ -6,7 +6,7 @@ class Config:
     General configuration parent class
     '''
     QUOTE_API_BASE_URL ='http://quotes.stormconsultancy.co.uk/random.json'
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/blog'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaaccess:Access@localhost/blog'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SQLALCHEMY_TRACK_MODIFICATIONS = False    
     SIMPLEMDE_JS_IIFE = True
@@ -15,15 +15,10 @@ class Config:
     
 
 
-
 class ProdConfig(Config):
-    '''
-    Production  configuration child class
-    Args:
-        Config: The parent configuration class with General configuration settings
-    '''
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-
+      SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL","")
+      if SQLALCHEMY_DATABASE_URI.startswith("postgres://"): 
+          SQLALCHEMY_DATABASE_URI =SQLALCHEMY_DATABASE_URI.replace("postgres://","postgresql://",1)
 
 class DevConfig(Config):
     '''
@@ -31,12 +26,12 @@ class DevConfig(Config):
     Args:
     Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/blog'  
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaaccess:Access@localhost/blog'  
     DEBUG = True    
 
     
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/blog_test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaaccess:Access@localhost/blog_test'
 
    
 config_options = {
