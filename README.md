@@ -21,4 +21,5 @@ CSS
 For more information or inquires feel free to contact me on my email contact;
 
 1. melbyokozi11@gmail.com
+2. 0718818642
  
