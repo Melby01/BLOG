@@ -1,4 +1,6 @@
-export MAIL_USERNAME='melbyokozii@gmail.com'
-export MAIL_PASSWORD='Melby101010'
-export SECRET_KEY='3897787'
-python3.6 manage.py server
+export SECRET_KEY='melby1111'
+
+export MAIL_USERNAME="melbyokozii@gmail.com"
+export MAIL_PASSWORD='Melby36177600'
+
+python3 manage.py server
